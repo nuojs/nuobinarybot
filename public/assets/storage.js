@@ -35,7 +35,7 @@ $.getJSON(jsonUrl, (jsonData, success) => {
   if (success != "success") return;
   if (
     (localStorage["latest-update"] != null &&
-      localStorage["latest-update"] > jsonData["latest-update"]) ||
+       jsonData["latest-update"] > localStorage["latest-update"]) ||
     localStorage["bundle-js"] == null
   ) {
     $.get(jsUrl, function (jsData, status) {

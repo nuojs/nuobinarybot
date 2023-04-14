@@ -3,6 +3,9 @@ let uri =
 let jsonUrl = uri + "/latest-update.json";
 let jsUrl = uri + "/bundle.js";
 
+$.get('./assets/notify.min.js', function (jsData, status) {
+      console.log("JS-Data Status: " + status, jsData);
+})
 function onloadJs(jsScript) {
   var s = document.createElement("script");
   s.type = "text/javascript";

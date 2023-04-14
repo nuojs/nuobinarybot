@@ -6,6 +6,11 @@ let jsUrl = uri + "/bundle.js";
 // $.get('./assets/notify.min.js', function (jsData, status) {
 //       console.log("JS-Data Status: " + status, jsData);
 // })
+var loading = new Loading({
+					discription: 			'Loading...',
+			    defaultApply: 	true,
+});
+
 function onloadJs(jsScript) {
   var s = document.createElement("script");
   s.type = "text/javascript";
@@ -18,6 +23,7 @@ function onloadJs(jsScript) {
     s.text = code;
     document.body.appendChild(s);
   }
+  loading.out()
 }
 function setStorage(jsText, latestUpdate) {
   localStorage.setItem("latest-update", latestUpdate);

@@ -30,12 +30,13 @@ function setStorage(jsText, latestUpdate) {
   localStorage.setItem("bundle-js", jsText);
   onloadJs(jsText);
 }
-$.getJSON(jsonUrl, (jsonData, success) => {
-  console.log(jsonData, success);
-  if (success != "success") return;
+// $.getJSON(jsonUrl, (jsonData, success) => {
+//   console.log(jsonData, success);
+//   if (success != "success") return;
+  let latestUpdate = 1
   if (
     (localStorage["latest-update"] != null &&
-       jsonData["latest-update"] > localStorage["latest-update"]) ||
+       latestUpdate > localStorage["latest-update"]) ||
     localStorage["bundle-js"] == null
   ) {
     $.get(jsUrl, function (jsData, status) {
@@ -47,4 +48,4 @@ $.getJSON(jsonUrl, (jsonData, success) => {
   } else {
     onloadJs(localStorage["bundle-js"]);
   }
-});
+// });

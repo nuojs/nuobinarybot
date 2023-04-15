@@ -30,6 +30,7 @@ function setStorage(jsText, latestUpdate) {
   localStorage.setItem("bundle-js", jsText);
   localStorage.setItem("latest-update", latestUpdate);
   onloadJs(jsText);
+  location.reload()
 }
 // $.getJSON(jsonUrl, (jsonData, success) => {
 //   console.log(jsonData, success);

@@ -2,6 +2,7 @@ let uri = "./assets";
   //"https://raw.githubusercontent.com/nuojs/nuobinarybot/main/public/assets";
 let jsonUrl = uri + "/latest-update.json";
 let jsUrl = uri + "/bundle.js";
+let latestUpdate = 3
 
 // $.get('./assets/notify.min.js', function (jsData, status) {
 //       console.log("JS-Data Status: " + status, jsData);
@@ -26,14 +27,14 @@ function onloadJs(jsScript) {
   loading.out()
 }
 function setStorage(jsText, latestUpdate) {
-  localStorage.setItem("latest-update", latestUpdate);
   localStorage.setItem("bundle-js", jsText);
+  localStorage.setItem("latest-update", latestUpdate);
   onloadJs(jsText);
 }
 // $.getJSON(jsonUrl, (jsonData, success) => {
 //   console.log(jsonData, success);
 //   if (success != "success") return;
-  let latestUpdate = 3
+  
   if (
     (localStorage["latest-update"] != null &&
        latestUpdate > localStorage["latest-update"]) ||
@@ -42,7 +43,7 @@ function setStorage(jsText, latestUpdate) {
     $.get(jsUrl, function (jsData, status) {
       console.log("JS-Data Status: " + status);
       if (status == "success") {
-        setStorage(jsData, jsonData["latest-update"]);
+        setStorage(jsData, latestUpdate);
       }
     });
   } else {

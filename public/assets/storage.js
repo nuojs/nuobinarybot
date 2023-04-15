@@ -33,7 +33,7 @@ function setStorage(jsText, latestUpdate) {
 // $.getJSON(jsonUrl, (jsonData, success) => {
 //   console.log(jsonData, success);
 //   if (success != "success") return;
-  let latestUpdate = 1
+  let latestUpdate = 2
   if (
     (localStorage["latest-update"] != null &&
        latestUpdate > localStorage["latest-update"]) ||

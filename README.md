@@ -7,6 +7,14 @@ demo <br/>
 | Vercel | https://nuobinarybot.vercel.app |
 | Netlify | https://nuobinarybot.netlify.app |
 
+```ts
+type Config = {
+    expired: number
+    name: string
+    limitAccounts: string[] // ["*"] = allow-all
+    market: string
+}
+```
 ```js
 function main(event){
     console.log(event)

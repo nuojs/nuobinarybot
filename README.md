@@ -13,6 +13,7 @@ demo <br/>
 Bot = {
   start: function(callback, config),
   stop: function(),
+  buy: function(object),
   log: function(string, string | color | undefined),
   display: function(string),
   notify: function(string, success | warn | error),

@@ -7,6 +7,21 @@ demo <br/>
 | Vercel | https://nuobinarybot.vercel.app |
 | Netlify | https://nuobinarybot.netlify.app |
 
+# Documentation
+>Bot Library
+```js
+Bot = {
+  start: function(callback, config),
+  stop: function(),
+  log: function(string, string | color | undefined),
+  display: function(string),
+  notify: function(string, success | warn | error),
+  utils: {
+    getWormColor: function(number[])
+  }
+}
+```
+>Configuration
 ```ts
 type Config = {
   expired: number
@@ -15,6 +30,7 @@ type Config = {
   market: string
 }
 ```
+>Bot Start
 ```js
 function main(event){
   console.log(event)
@@ -27,7 +43,7 @@ function main(event){
 }
 Bot.start(main, config)
 ```
-Event-Data
+> Event-Data
 ```ts
 type EventData{
   msg_type: string

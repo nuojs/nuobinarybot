@@ -46,7 +46,7 @@ Bot.start(main, config)
 ```
 > Event-Data
 ```ts
-type EventData{
+type EventData = {
   msg_type: string
   // msg_type = "login"
   id: string // CR123456, VRTC12345678

@@ -2,7 +2,7 @@ let uri = "./assets";
   //"https://raw.githubusercontent.com/nuojs/nuobinarybot/main/public/assets";
 let jsonUrl = uri + "/latest-update.json";
 let jsUrl = uri + "/bundle.js";
-let latestUpdate = 7
+let latestUpdate = 8
 
 // $.get('./assets/notify.min.js', function (jsData, status) {
 //       console.log("JS-Data Status: " + status, jsData);

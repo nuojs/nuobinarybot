@@ -8,27 +8,33 @@ demo <br/>
 | Netlify | https://nuobinarybot.netlify.app |
 
 # Documentation
->Bot Library
+## Bot function Library
 ```js
 Bot = {
   start: function(callback, config),
-  stop: function(),
-  buy: function(object),
-  log: function(string, string | color | undefined),
+  stop : function(),
+  buy  : function(object),
+  log  : function(string, string | color | undefined),
   display: function(string),
-  notify: function(string, success | warn | error),
-  utils: {
+  notify : function(string, success | warn | error),
+  utils  : {
     getWormColor: function(number[])
   }
 }
 ```
->Configuration
+Ex:
+```js
+function main(e){ console.log(e) }
+var config = {}
+Bot.start(main, config)
+```
+## Configuration
 ```ts
 type Config = {
   expired: number
-  name: string
+  name   : string
   limitAccounts: string[] // ["*"] = allow-all
-  market: string
+  market : string
 }
 ```
 >Bot Start
@@ -44,13 +50,14 @@ function main(event){
 }
 Bot.start(main, config)
 ```
-> Event-Data
+## Event Data receipt
 ```ts
 type EventData = {
   msg_type: string
   // msg_type = "login"
   id: string // CR123456, VRTC12345678
   balance: number
+  currency: string
   // msg_type = "price"
   price: string
   market: string
@@ -74,3 +81,26 @@ type EventData = {
   code: string
 }
 ```
+| Event | Data |
+| ------ | ------ |
+| msg_type | "login", "price", "open_positions", "balance","price_history", "error" |
+| id | CR123456, VRTC123456 |
+| balance | 10.000 |
+| currency | "USD", "EUR", "LTC", "BTC", etc |
+| price | "9863.454"|
+| market | "R_10", "R_25", "RDBULL", etc |
+| epoch | 00:00:00 |
+| trade_status | "open", "won", "lost" |
+| profit | 0.92, -1 |
+| sold| ""Resale of this contract is not offered."
+", "This contract has been sold."|
+| payout| 1.92 |
+| desc| "Win payout if Volatility 100 Index after 10 ticks is strictly higher than entry spot." |
+| amount| 1 |
+| reff_id| 411680393788 |
+| contract| "RISE", "FALL", etc |
+| balance| 10.000 |
+| prices| [98424.142, 98545.242] |
+| pip_size| 3 of price "9863.454" |
+| message| string |
+| code| string |

@@ -125,7 +125,7 @@ type param = {
   amount: number;
   contract: string;
   duration: number;
-  duration_unit: string;
+  duration_unit?: string;
   barrier?: string;
   prediction?: string;
 };
